@@ -4,7 +4,8 @@ def checkwrds(wrds,stuffs):
     return set(wrds).intersection(stuffs.split())
 
 #Take in text and award points
-def points4words ():
+def points4words (text,bonus):
+
 
 stuff = input("Enter words: ")
 bonuswords = ["butts", "stuff"]
