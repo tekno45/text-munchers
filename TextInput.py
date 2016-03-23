@@ -1,16 +1,17 @@
 import os
 import csv
 #Aaron hall, fastest way to find a string inside a string
-def checkwrds(wrds,stuffs):
-    return set(wrds).intersection(stuffs.split())
 
 #Take in text and award points
 def points4words (text, bonus):
-    bonusinstuff = [text.count(word) for word in bonus]
+    bonuspoints = 0
     points = len(text)
+
+    bonusinstuff = [text.count(word) for word in bonus]
+
+
     message = "Your text is worth {} points!"
     print(message.format(int(points)))
-    bonuspoints = 0
     for x in bonusinstuff:
         if x >= 1:
             bonuspoints = bonuspoints +1
