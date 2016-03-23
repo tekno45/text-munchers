@@ -22,9 +22,10 @@ os.chdir("d:/and")
 x = open("data.csv")
 bonuslist = ["roar", "dumb", "eat"]
 for row in csv.reader(x):
-    bonuslist.append(str(row[0].lower))
-
-points4words(input("Enter words: "), bonuslist)
+    bonuslist.append(row[0])
+bonusset = set(bonuslist)
+bonusset = list(bonusset)
+points4words(input("Enter words: "), bonusset)
 
 
 #print (bonusinstuff)
