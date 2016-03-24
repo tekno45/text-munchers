@@ -11,22 +11,23 @@ def points4words (text, bonus):
 
 
     message = "Your text is worth {} points!"
-    print(message.format(int(points)))
     for x in bonusinstuff:
         if x >= 1:
             bonuspoints = bonuspoints +1
-    if bonuspoints > 0:
-        bonusmessage  = "WOAH you earned {} bonus points!"
-        print(bonusmessage.format(bonuspoints))
 
-os.chdir("d:/and")
-x = open("data.csv")
-bonuslist = ["roar", "dumb", "eat"]
-for row in csv.reader(x):
-    bonuslist.append(row[0])
-bonusset = set(bonuslist)
-bonusset = list(bonusset)
-points4words(input("Enter words: "), bonusset)
+    bubble = points, bonuspoints
+    #return a tuple of points and bonus points, this bubble of points will be used on all point recievers
+    return bubble
+
+
+#os.chdir("d:/and")
+#x = open("data.csv")
+#bonuslist = ["roar", "dumb", "eat"]
+#for row in csv.reader(x):
+    #bonuslist.append(row[0])
+#bonusset = set(bonuslist)
+#bonusset = list(bonusset)
+#points4words(input("Enter words: "), bonusset)
 
 
 #print (bonusinstuff)
