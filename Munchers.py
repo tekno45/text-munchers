@@ -5,6 +5,7 @@ class Muncher:
     def __init__(self):
         self.exp = 0
         self.level = 0
+        self.name = ""
 
     def Feed(self, bubble):
         for x in bubble:
