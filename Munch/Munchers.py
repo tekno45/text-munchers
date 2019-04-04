@@ -1,24 +1,30 @@
+levels =[
+    
+    {"level":1, "exp":1000},
+    {"level":2, "exp":2500}
 
-class Muncher:
-    def __init__(self):
+
+]
+
+class Muncher(object):
+    def __init__(self, name):
         self.exp = 0
         self.level = 0
-        self.name = ""
-
-    # add contents of tuple to exp, will return true for now, will add error handling later
+        self.name = name
+        
     def feed(self, points):
-        self.exp = points[0] + points[1]
+        msg = []
+        self.exp +=points
+        msg.append("{} recieved {} exp points!".format(self.name, points))
+        for level in levels:
+            if self.exp >= level["exp"] and self.level != level['level']:
+                self.level = level["level"]
+                msg.append("{} leveled up and is now lvl {}!".format(self.name, self.level))
+        print(*msg, sep="\n")
         return True
 
-    # returns attributes needed to save monster. List is returned and will be run through a csv writer
-    def muncher_save(self):
-        export = [self.name, self.exp, self.level]
-        return export
-# x = Muncher()
-    # os.chdir("d:/and")
-    # y = open("data.csv")
-    # words = []
-    # for row in csv.reader(y):
-    # words.append(row[0])
+    def export(self):
+        return {"name":self.name, "exp":self.exp, "level":self.level}
 
-    # x.Feed(points4words(input(), set(words)))
+
+
